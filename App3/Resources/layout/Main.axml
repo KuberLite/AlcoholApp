@@ -3,5 +3,41 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:weightSum="4">
+    <TextView
+        android:text="Select your state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:id="@+id/textView1" />
+    <ImageButton
+        android:src="@drawable/sad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:tag="Easy"
+        android:id="@+id/imageButtonFirstFace" />
+    <ImageButton
+        android:src="@drawable/face"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:id="@+id/imageButtonSecondFace" />
+    <ImageButton
+        android:src="@drawable/face_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:id="@+id/imageButtonThirdFace" />
+    <ImageButton
+        android:src="@drawable/fatality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:id="@+id/imageButtonFourthFace" />
 </LinearLayout>

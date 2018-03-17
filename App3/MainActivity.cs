@@ -4,15 +4,59 @@ using Android.OS;
 
 namespace App3
 {
-    [Activity(Label = "App3", MainLauncher = true)]
+    [Activity(Label = "Alcohol party", MainLauncher = true)]
     public class MainActivity : Activity
     {
+        public static string nameLevel;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            PressAllImageButton();
+        }
+
+        private void PressImageButtonFirstFace()
+        {
+            FindViewById<ImageButton>(Resource.Id.imageButtonFirstFace).Click += delegate
+            {
+                nameLevel = "Easy";
+                StartActivity(typeof(QuantityActivity));
+            };
+        }
+
+        private void PressImageButtonSecondFace()
+        {
+            FindViewById<ImageButton>(Resource.Id.imageButtonSecondFace).Click += delegate
+            {
+                nameLevel = "Second";
+                StartActivity(typeof(QuantityActivity));
+            };
+        }
+
+        private void PressImageButtonThirdFace()
+        {
+            FindViewById<ImageButton>(Resource.Id.imageButtonThirdFace).Click += delegate
+            {
+                nameLevel = "Third";
+                StartActivity(typeof(QuantityActivity));
+            };
+        }
+
+        private void PressImageButtonFourthFace()
+        {
+            FindViewById<ImageButton>(Resource.Id.imageButtonFourthFace).Click += delegate
+            {
+                nameLevel = "Fourth";
+                StartActivity(typeof(QuantityActivity));
+            };
+        }
+
+        private void PressAllImageButton()
+        {
+            PressImageButtonFirstFace();
+            PressImageButtonSecondFace();
+            PressImageButtonThirdFace();
+            PressImageButtonFourthFace();
         }
     }
 }
