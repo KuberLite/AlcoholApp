@@ -2,7 +2,7 @@
 using Android.OS;
 using Android.Widget;
 using App3.Resources;
-using App3.Resources.DataHelper;
+using App3.Resources.Helpers;
 using App3.Resources.Model;
 using System;
 using System.Collections.Generic;
@@ -13,8 +13,21 @@ namespace App3
     class SelectAlcoholeActivity : Activity
     {  
         ListView lstData;
+
+        private static Alcohol GetSelectedAlcohol(AdapterView.ItemClickEventArgs e)
+        {
+            return new Alcohol()
+            {
+                NameAlcohol = DataContainer.alcohols[e.Position].NameAlcohol,
+                Volume = DataContainer.alcohols[e.Position].Volume,
+                Discription = DataContainer.alcohols[e.Position].Discription,
+                AlcoholPercent = DataContainer.alcohols[e.Position].AlcoholPercent
+            };
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Logistics.Clear();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuAlcohole);
 
@@ -29,16 +42,11 @@ namespace App3
                 StartActivity(typeof(LastWindowActivity));
             };
         }
+
         static void lstData_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            SelectedDataContainer.newAlcohols.Add(
-                new NewAlcohol
-                {
-                    SelectedNameAlcohol = DataContainer.alcohols[e.Position].NameAlcohol,
-                    SelectedVolume = DataContainer.alcohols[e.Position].Volume,
-                    SelectedDiscription = DataContainer.alcohols[e.Position].Discription,
-                    SelectedAlcoholPercent = DataContainer.alcohols[e.Position].AlcoholPercent
-                });
+            Alcohol alcohol = GetSelectedAlcohol(e);
+            Logistics.AddElement(alcohol);
         }
     }
 } 

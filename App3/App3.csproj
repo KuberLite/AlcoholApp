@@ -79,10 +79,12 @@
     <Compile Include="LastWindowActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="QuantityActivity.cs" />
+    <Compile Include="Resources\Helepers\AlcoholicIntoxicationCalculator.cs" />
     <Compile Include="Resources\Helepers\DataContainer.cs" />
+    <Compile Include="Resources\Helepers\Logistics.cs" />
     <Compile Include="Resources\ListViewAdapter.cs" />
     <Compile Include="Resources\Model\Alcohol.cs" />
-    <Compile Include="Resources\Model\NewAlcohol.cs" />
+    <Compile Include="Resources\Model\MatchedAlcohol.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\SelectedListViewAdapter.cs" />

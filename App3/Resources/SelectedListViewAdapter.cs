@@ -18,9 +18,9 @@ namespace App3.Resources
     {
         private Activity activity;
 
-        private List<NewAlcohol> lstNewAlcohole;
+        private List<MatchedAlcohol> lstNewAlcohole;
 
-        public SelectedListViewAdapter(Activity activity, List<NewAlcohol> lstNewAlcohol)
+        public SelectedListViewAdapter(Activity activity, List<MatchedAlcohol> lstNewAlcohol)
         {
             this.activity = activity;
             this.lstNewAlcohole = lstNewAlcohol;
@@ -41,7 +41,7 @@ namespace App3.Resources
 
         public override long GetItemId(int position)
         {
-            return lstNewAlcohole[position].SelectedId;
+            return lstNewAlcohole[position].Id;
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
@@ -52,11 +52,13 @@ namespace App3.Resources
             var SelectedtxtVolume = view.FindViewById<TextView>(Resource.Id.textSelectedVolume);
             var SelectedtxtDescription = view.FindViewById<TextView>(Resource.Id.textSelectedDiscription);
             var SelectedtxtAlcoholPercent = view.FindViewById<TextView>(Resource.Id.textSelectedAlcoholPercent);
+            var SelectedCount = view.FindViewById<TextView>(Resource.Id.textSelectedCount);
 
-            SelectedtxtName.Text = lstNewAlcohole[position].SelectedNameAlcohol;
-            SelectedtxtVolume.Text = lstNewAlcohole[position].SelectedVolume.ToString();
-            SelectedtxtDescription.Text = lstNewAlcohole[position].SelectedDiscription;
-            SelectedtxtAlcoholPercent.Text = lstNewAlcohole[position].SelectedAlcoholPercent.ToString();
+            SelectedtxtName.Text = lstNewAlcohole[position].NameAlcohol;
+            SelectedtxtVolume.Text = lstNewAlcohole[position].Volume.ToString();
+            SelectedtxtDescription.Text = lstNewAlcohole[position].Discription;
+            SelectedtxtAlcoholPercent.Text = lstNewAlcohole[position].AlcoholPercent.ToString();
+            SelectedCount.Text = "x " + lstNewAlcohole[position].Count.ToString();
 
             return view;
         }

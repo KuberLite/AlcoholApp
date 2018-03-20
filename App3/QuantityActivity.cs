@@ -1,13 +1,14 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Widget;
+using App3.Resources.Helpers;
 
 namespace App3
 {
     [Activity(Label = "Alcohol party")]
     class QuantityActivity : Activity
     {
-        public static int count = 0;
+        public static int count = 1;
         protected override void OnCreate(Bundle savedInstanceState){ 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Quantity);
@@ -36,6 +37,7 @@ namespace App3
         private void PressButtonNext(){
             FindViewById<Button>(Resource.Id.buttonNext).Click += (o, e) =>
             {
+                Logistics.NumberOfPeople = count;
                 StartActivity(typeof(SelectAlcoholeActivity));
             };
         }

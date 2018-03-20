@@ -4,8 +4,9 @@ using Android.OS;
 using System;
 using App3.Resources.Model;
 using System.Collections.Generic;
-using App3.Resources.DataHelper;
+using App3.Resources.Helpers;
 using App3.Resources;
+using App3.Resources.Helepers;
 
 namespace App3
 {
@@ -13,6 +14,7 @@ namespace App3
     public class MainActivity : Activity
     {
         public static string nameLevel;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -25,6 +27,7 @@ namespace App3
             FindViewById<ImageButton>(Resource.Id.imageButtonFirstFace).Click += delegate
             {
                 nameLevel = "Easy";
+                Logistics.state = AlcoholicIntoxicationStates.EasyState;
                 StartActivity(typeof(QuantityActivity));
             };
         }
@@ -33,7 +36,8 @@ namespace App3
         {
             FindViewById<ImageButton>(Resource.Id.imageButtonSecondFace).Click += delegate
             {
-                nameLevel = "Second";
+                nameLevel = "Medium";
+                Logistics.state = AlcoholicIntoxicationStates.MediumState;
                 StartActivity(typeof(QuantityActivity));
             };
         }
@@ -42,7 +46,8 @@ namespace App3
         {
             FindViewById<ImageButton>(Resource.Id.imageButtonThirdFace).Click += delegate
             {
-                nameLevel = "Third";
+                nameLevel = "Hard";
+                Logistics.state = AlcoholicIntoxicationStates.HardState;
                 StartActivity(typeof(QuantityActivity));
             };
         }
@@ -51,7 +56,8 @@ namespace App3
         {
             FindViewById<ImageButton>(Resource.Id.imageButtonFourthFace).Click += delegate
             {
-                nameLevel = "Fourth";
+                nameLevel = "HardBass";
+                Logistics.state = AlcoholicIntoxicationStates.HardBassState;
                 StartActivity(typeof(QuantityActivity));
             };
         }

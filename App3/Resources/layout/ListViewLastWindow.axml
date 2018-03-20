@@ -32,4 +32,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/textSelectedAlcoholPercent"
         android:gravity="center" />
+    <TextView
+        android:text="Count"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSelectedCount"
+        android:gravity="right" />
 </LinearLayout>
