@@ -40,5 +40,10 @@
             android:gravity="center"
             android:layout_height="70dp"
             android:id="@+id/buttonQuantityMinus" />
+        <Button
+            android:text="Next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonNext" />
     </LinearLayout>
 </LinearLayout>

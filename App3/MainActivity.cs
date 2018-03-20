@@ -1,6 +1,11 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System;
+using App3.Resources.Model;
+using System.Collections.Generic;
+using App3.Resources.DataHelper;
+using App3.Resources;
 
 namespace App3
 {
@@ -14,7 +19,7 @@ namespace App3
             SetContentView(Resource.Layout.Main);
             PressAllImageButton();
         }
-
+        #region ImageButton
         private void PressImageButtonFirstFace()
         {
             FindViewById<ImageButton>(Resource.Id.imageButtonFirstFace).Click += delegate
@@ -58,6 +63,7 @@ namespace App3
             PressImageButtonThirdFace();
             PressImageButtonFourthFace();
         }
+        #endregion
     }
 }
 
